@@ -810,13 +810,14 @@
         .result-time-value {
             font-size: 1.3rem;
             font-weight: 600;
-            color: var(--primary-color);
+            color: #ffffff;
             margin-bottom: 5px;
+            text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
         }
 
         .result-time-label {
             font-size: 0.8rem;
-            color: #666;
+            color: #e5e7eb;
         }
 
         .info-box {
@@ -1077,62 +1078,49 @@
                             <div class="clock-instruction" id="clockInstruction">Hold and drag the clock hands to change time</div>
                             <svg class="clock-svg" viewBox="0 0 300 300" width="300" height="300">
                                 <!-- Clock face circle -->
-                                <circle cx="150" cy="150" r="148" fill="rgba(30, 30, 50, 0.3)" stroke="rgba(99, 102, 241, 0.3)" stroke-width="2"/>
+                                <circle cx="150" cy="150" r="145" fill="rgba(30, 30, 50, 0.2)" stroke="rgba(99, 102, 241, 0.4)" stroke-width="2"/>
 
-                                <!-- Clock numbers -->
-                                <text x="150" y="25" text-anchor="middle" fill="#e5e7eb" font-size="18" font-weight="600">12</text>
-                                <text x="220" y="50" text-anchor="middle" fill="#e5e7eb" font-size="18" font-weight="600">1</text>
-                                <text x="265" y="155" text-anchor="middle" fill="#e5e7eb" font-size="18" font-weight="600">3</text>
-                                <text x="220" y="270" text-anchor="middle" fill="#e5e7eb" font-size="18" font-weight="600">5</text>
-                                <text x="150" y="285" text-anchor="middle" fill="#e5e7eb" font-size="18" font-weight="600">6</text>
-                                <text x="80" y="270" text-anchor="middle" fill="#e5e7eb" font-size="18" font-weight="600">7</text>
-                                <text x="35" y="155" text-anchor="middle" fill="#e5e7eb" font-size="18" font-weight="600">9</text>
-                                <text x="80" y="50" text-anchor="middle" fill="#e5e7eb" font-size="18" font-weight="600">11</text>
-                                <text x="25" y="155" text-anchor="middle" fill="#e5e7eb" font-size="16" font-weight="600" text-anchor="start" dominant-baseline="middle">10</text>
-                                <text x="265" y="110" text-anchor="middle" fill="#e5e7eb" font-size="16" font-weight="600" text-anchor="start" dominant-baseline="middle">2</text>
-                                <text x="265" y="210" text-anchor="middle" fill="#e5e7eb" font-size="16" font-weight="600" text-anchor="start" dominant-baseline="middle">4</text>
-                                <text x="80" y="210" text-anchor="middle" fill="#e5e7eb" font-size="16" font-weight="600" text-anchor="end" dominant-baseline="middle">8</text>
+                                <!-- Clock numbers with PERFECT positioning -->
+                                <text x="150" y="25" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" font-size="22" font-weight="700">12</text>
+                                <text x="195" y="40" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" font-size="18" font-weight="600">1</text>
+                                <text x="230" y="70" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" font-size="18" font-weight="600">2</text>
+                                <text x="250" y="110" text-anchor="start" dominant-baseline="middle" fill="#ffffff" font-size="18" font-weight="600">3</text>
+                                <text x="230" y="195" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" font-size="18" font-weight="600">4</text>
+                                <text x="195" y="235" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" font-size="18" font-weight="600">5</text>
+                                <text x="150" y="250" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" font-size="18" font-weight="600">6</text>
+                                <text x="105" y="235" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" font-size="18" font-weight="600">7</text>
+                                <text x="70" y="195" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" font-size="18" font-weight="600">8</text>
+                                <text x="50" y="110" text-anchor="end" dominant-baseline="middle" fill="#ffffff" font-size="18" font-weight="600">9</text>
+                                <text x="70" y="70" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" font-size="18" font-weight="600">10</text>
+                                <text x="105" y="40" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" font-size="18" font-weight="600">11</text>
 
                                 <!-- Hour markers -->
-                                <circle cx="150" cy="20" r="2" fill="#e5e7eb"/>
-                                <circle cx="220" cy="45" r="2" fill="#e5e7eb"/>
-                                <circle cx="270" cy="150" r="2" fill="#e5e7eb"/>
-                                <circle cx="220" cy="265" r="2" fill="#e5e7eb"/>
-                                <circle cx="150" cy="280" r="2" fill="#e5e7eb"/>
-                                <circle cx="80" cy="265" r="2" fill="#e5e7eb"/>
-                                <circle cx="30" cy="150" r="2" fill="#e5e7eb"/>
-                                <circle cx="80" cy="45" r="2" fill="#e5e7eb"/>
+                                <circle cx="150" cy="15" r="4" fill="#6366f1" opacity="0.8"/>
+                                <circle cx="225" cy="40" r="4" fill="#6366f1" opacity="0.8"/>
+                                <circle cx="270" cy="150" r="4" fill="#6366f1" opacity="0.8"/>
+                                <circle cx="225" cy="260" r="4" fill="#6366f1" opacity="0.8"/>
+                                <circle cx="150" cy="285" r="4" fill="#6366f1" opacity="0.8"/>
+                                <circle cx="75" cy="260" r="4" fill="#6366f1" opacity="0.8"/>
+                                <circle cx="30" cy="150" r="4" fill="#6366f1" opacity="0.8"/>
+                                <circle cx="75" cy="40" r="4" fill="#6366f1" opacity="0.8"/>
 
-                                <!-- Hour hand -->
-                                <line id="hourHand" x1="150" y1="150" x2="150" y2="80"
-                                      stroke="url(#hourGradient)" stroke-width="8"
+                                <!-- Hour hand - VERY VISIBLE -->
+                                <line id="hourHand" x1="150" y1="150" x2="150" y2="90"
+                                      stroke="#ffffff" stroke-width="14"
                                       stroke-linecap="round"
-                                      style="cursor: grab; transition: none;"/>
+                                      filter="drop-shadow(0 0 15px #6366f1)"
+                                      style="cursor: grab;"/>
 
-                                <!-- Minute hand -->
-                                <line id="minuteHand" x1="150" y1="150" x2="150" y2="50"
-                                      stroke="url(#minuteGradient)" stroke-width="6"
+                                <!-- Minute hand - VERY VISIBLE -->
+                                <line id="minuteHand" x1="150" y1="150" x2="150" y2="60"
+                                      stroke="#ffffff" stroke-width="10"
                                       stroke-linecap="round"
-                                      style="cursor: grab; transition: none;"/>
+                                      filter="drop-shadow(0 0 15px #ec4899)"
+                                      style="cursor: grab;"/>
 
                                 <!-- Center dot -->
-                                <circle cx="150" cy="150" r="10" fill="url(#centerGradient)"/>
-
-                                <!-- Gradients -->
-                                <defs>
-                                    <linearGradient id="hourGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
-                                    </linearGradient>
-                                    <linearGradient id="minuteGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
-                                    </linearGradient>
-                                    <radialGradient id="centerGradient">
-                                        <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
-                                    </radialGradient>
-                                </defs>
+                                <circle cx="150" cy="150" r="15" fill="#ffffff" filter="drop-shadow(0 0 20px #6366f1)"/>
+                                <circle cx="150" cy="150" r="8" fill="#6366f1"/>
                             </svg>
                         </div>
 
@@ -1307,6 +1295,11 @@
 
         // Functions
         function updateClockVisual() {
+            // Don't update visual if currently dragging to prevent jumping
+            if (window.isDragging) {
+                return;
+            }
+
             const hour = parseInt(hourInput.value);
             const minute = parseInt(minuteInput.value);
 
@@ -1318,18 +1311,18 @@
                 hour24 = 0;
             }
 
-            // Calculate angles - 12 o'clock = -90°, 3 o'clock = 0°, etc.
-            const hourAngle = (hour24 % 12) * 30 - 90;
-            const minuteAngle = minute * 6 - 90;
+            // Calculate angles where 12 o'clock is at top (0 degrees)
+            const hourAngle = (hour24 % 12) * 30;
+            const minuteAngle = minute * 6;
 
-            // Calculate end points for hands
+            // Calculate end points for hands with proper lengths
             const hourRadians = hourAngle * (Math.PI / 180);
-            const hourEndX = 150 + Math.cos(hourRadians) * 70;
-            const hourEndY = 150 + Math.sin(hourRadians) * 70;
+            const hourEndX = 150 + Math.cos(hourRadians - Math.PI/2) * 70;
+            const hourEndY = 150 + Math.sin(hourRadians - Math.PI/2) * 70;
 
             const minuteRadians = minuteAngle * (Math.PI / 180);
-            const minuteEndX = 150 + Math.cos(minuteRadians) * 100;
-            const minuteEndY = 150 + Math.sin(minuteRadians) * 100;
+            const minuteEndX = 150 + Math.cos(minuteRadians - Math.PI/2) * 100;
+            const minuteEndY = 150 + Math.sin(minuteRadians - Math.PI/2) * 100;
 
             // Update hand positions
             hourHand.setAttribute('x2', hourEndX);
@@ -1454,7 +1447,7 @@
             }
         }
 
-        // SVG Clock Interaction - Completely rebuilt
+        // Perfect SVG Clock Interaction - Fixed
         function initializeClockInteraction() {
             const hourHand = document.getElementById('hourHand');
             const minuteHand = document.getElementById('minuteHand');
@@ -1479,13 +1472,12 @@
                 isDragging = true;
                 currentHand = handType;
 
-                // Remove transition during drag for instant response
-                hourHand.style.transition = 'none';
-                minuteHand.style.transition = 'none';
-
                 // Prevent text selection and default behavior
                 document.body.style.userSelect = 'none';
                 e.preventDefault();
+
+                // Update global isDragging state
+                window.isDragging = true;
             }
 
             function drag(e) {
@@ -1508,47 +1500,54 @@
                 const deltaX = clientX - clockCenterX;
                 const deltaY = clientY - clockCenterY;
 
-                // Get angle in degrees (0° = 3 o'clock, 90° = 6 o'clock, etc.)
+                // Get angle in degrees where 12 o'clock is at top
                 let angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+                angle = angle + 90; // Adjust so 12 o'clock is at top
 
-                // Convert to 12-o'clock = 0° system
-                angle = angle - 90;
+                // Normalize angle to 0-360
                 if (angle < 0) angle += 360;
+                if (angle >= 360) angle -= 360;
 
                 if (currentHand === 'hour') {
-                    // Calculate end point for hour hand (70px length)
-                    const hourRadians = (angle - 90) * (Math.PI / 180);
-                    const hourEndX = 150 + Math.cos(hourRadians) * 70;
-                    const hourEndY = 150 + Math.sin(hourRadians) * 70;
+                    // Hour hand length
+                    const hourLength = 70;
+                    const hourRadians = angle * (Math.PI / 180);
+                    const hourEndX = 150 + Math.cos(hourRadians) * hourLength;
+                    const hourEndY = 150 + Math.sin(hourRadians) * hourLength;
 
-                    // Update hour hand position
+                    // Update hour hand position immediately
                     hourHand.setAttribute('x2', hourEndX);
                     hourHand.setAttribute('y2', hourEndY);
 
-                    // Convert angle to hour
+                    // Convert angle to hour (12 at top, 3 at right, 6 at bottom, 9 at left)
                     let hour = Math.round(angle / 30);
-                    if (hour === 0) hour = 12;
-                    if (hour === 13) hour = 1;
+                    if (hour === 0) hour = 12; // 12 o'clock
+                    if (hour > 12) hour = hour - 12;
 
-                    // Update input
-                    hourInput.value = hour;
+                    // Update input with validation
+                    if (hour >= 1 && hour <= 12) {
+                        hourInput.value = hour;
+                    }
 
                 } else if (currentHand === 'minute') {
-                    // Calculate end point for minute hand (100px length)
-                    const minuteRadians = (angle - 90) * (Math.PI / 180);
-                    const minuteEndX = 150 + Math.cos(minuteRadians) * 100;
-                    const minuteEndY = 150 + Math.sin(minuteRadians) * 100;
+                    // Minute hand length
+                    const minuteLength = 100;
+                    const minuteRadians = angle * (Math.PI / 180);
+                    const minuteEndX = 150 + Math.cos(minuteRadians) * minuteLength;
+                    const minuteEndY = 150 + Math.sin(minuteRadians) * minuteLength;
 
-                    // Update minute hand position
+                    // Update minute hand position immediately
                     minuteHand.setAttribute('x2', minuteEndX);
                     minuteHand.setAttribute('y2', minuteEndY);
 
                     // Convert angle to minutes
                     let minute = Math.round(angle / 6);
-                    if (minute === 60) minute = 0;
+                    if (minute >= 60) minute -= 60;
 
-                    // Update input
-                    minuteInput.value = minute;
+                    // Update input with validation
+                    if (minute >= 0 && minute <= 59) {
+                        minuteInput.value = minute;
+                    }
                 }
 
                 e.preventDefault();
@@ -1560,18 +1559,22 @@
                 isDragging = false;
                 currentHand = null;
 
-                // Restore transitions
-                setTimeout(() => {
-                    hourHand.style.transition = 'transform 0.3s ease';
-                    minuteHand.style.transition = 'transform 0.3s ease';
-                }, 50);
+                // Update global isDragging state
+                window.isDragging = false;
 
                 // Restore text selection
                 document.body.style.userSelect = '';
 
-                // Update from current input values to ensure consistency
-                updateClockVisual();
+                // IMPORTANT: Do NOT call updateClockVisual() here
+                // This keeps hands exactly where user dragged them
             }
+
+            // Store current drag state for external access
+            window.updateDragState = function(dragging, hand) {
+                isDragging = dragging;
+                currentHand = hand;
+                window.isDragging = dragging;
+            };
         }
 
         // Clock tooltips functionality
