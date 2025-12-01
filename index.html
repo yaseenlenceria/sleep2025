@@ -583,28 +583,36 @@
 
         .hour-hand {
             width: 10px;
-            height: 80px;
-            top: 60px;
-            left: 135px; /* 280/2 - 10/2 = 140-5 = 135 */
+            height: 70px;
             background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
             box-shadow:
                 0 0 20px rgba(99, 102, 241, 0.6),
                 0 4px 8px rgba(0, 0, 0, 0.3),
                 inset 0 0 10px rgba(255, 255, 255, 0.3);
             border: 1px solid rgba(139, 92, 246, 0.5);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-origin: center bottom;
+            margin-top: -70px;
+            margin-left: -5px;
         }
 
         .minute-hand {
             width: 6px;
-            height: 100px;
-            top: 40px;
-            left: 137px; /* 280/2 - 6/2 = 140-3 = 137 */
+            height: 90px;
             background: linear-gradient(135deg, #ec4899, #f59e0b, #10b981);
             box-shadow:
                 0 0 20px rgba(236, 72, 153, 0.6),
                 0 3px 6px rgba(0, 0, 0, 0.3),
                 inset 0 0 8px rgba(255, 255, 255, 0.3);
             border: 1px solid rgba(236, 72, 153, 0.5);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-origin: center bottom;
+            margin-top: -90px;
+            margin-left: -3px;
         }
 
         .clock-hand::before {
@@ -667,8 +675,9 @@
             height: 16px;
             background: var(--gradient-1);
             border-radius: 50%;
-            top: 132px; /* 280/2 - 16/2 = 140-8 = 132 */
-            left: 132px; /* 280/2 - 16/2 = 140-8 = 132 */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             box-shadow:
                 0 0 20px rgba(99, 102, 241, 0.8),
                 0 0 40px rgba(99, 102, 241, 0.4),
@@ -997,22 +1006,20 @@
             }
 
             .hour-hand {
-                height: 90px;
-                top: 70px;
-                left: 155px;
+                height: 80px;
                 width: 12px;
+                margin-top: -80px;
+                margin-left: -6px;
             }
 
             .minute-hand {
-                height: 110px;
-                top: 50px;
-                left: 157px;
+                height: 100px;
                 width: 8px;
+                margin-top: -100px;
+                margin-left: -4px;
             }
 
             .clock-center {
-                top: 152px;
-                left: 152px;
                 width: 16px;
                 height: 16px;
             }
@@ -1284,7 +1291,7 @@
         function updateClockVisual() {
             const hour = parseInt(hourInput.value);
             const minute = parseInt(minuteInput.value);
-            
+
             // Convert to 24-hour format for calculation
             let hour24 = hour;
             if (!isAm && hour < 12) {
@@ -1292,11 +1299,11 @@
             } else if (isAm && hour === 12) {
                 hour24 = 0;
             }
-            
-            // Calculate rotation angles
-            const hourAngle = (hour24 % 12) * 30 + (minute / 60) * 30;
+
+            // Calculate rotation angles - 12 o'clock is at 0 degrees, clockwise
+            const hourAngle = ((hour24 % 12) * 30) + (minute * 0.5);
             const minuteAngle = minute * 6;
-            
+
             // Apply rotations
             hourHand.style.transform = `rotate(${hourAngle}deg)`;
             minuteHand.style.transform = `rotate(${minuteAngle}deg)`;
@@ -1475,30 +1482,32 @@
                 }
 
                 // Calculate angle from center to mouse/touch position
+                // 12 o'clock is at top (angle -90), 3 o'clock is right (0), 6 o'clock is bottom (90), 9 o'clock is left (180)
                 const deltaX = clientX - clockCenterX;
                 const deltaY = clientY - clockCenterY;
-                let angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI) + 90;
+                let angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
 
-                // Normalize angle to 0-360
+                // Convert to 12-o'clock = 0 degrees system
+                angle = angle + 90;
                 if (angle < 0) angle += 360;
+                if (angle >= 360) angle -= 360;
 
                 if (currentHand === 'hour') {
-                    // Update hour hand
+                    // Update hour hand to follow mouse exactly
                     hourHand.style.transform = `rotate(${angle}deg)`;
 
-                    // Convert angle to hour
-                    let hour = Math.floor(angle / 30);
+                    // Convert angle to hour for display
+                    let hour = Math.round(angle / 30) % 12;
                     if (hour === 0) hour = 12;
-                    if (hour > 12) hour -= 12;
 
                     // Update hour input
                     hourInput.value = hour;
 
                 } else if (currentHand === 'minute') {
-                    // Update minute hand
+                    // Update minute hand to follow mouse exactly
                     minuteHand.style.transform = `rotate(${angle}deg)`;
 
-                    // Convert angle to minutes
+                    // Convert angle to minutes for display
                     let minute = Math.round(angle / 6);
                     if (minute === 60) minute = 0;
 
@@ -1506,8 +1515,6 @@
                     minuteInput.value = minute;
                 }
 
-                // Update input display
-                updateClockVisual();
                 e.preventDefault();
             }
 
