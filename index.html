@@ -1254,8 +1254,19 @@
             updateClockVisual();
         });
 
-        hourInput.addEventListener('input', updateClockVisual);
-        minuteInput.addEventListener('input', updateClockVisual);
+        hourInput.addEventListener('input', function() {
+            // Only update clock if not currently dragging
+            if (!isDragging) {
+                updateClockVisual();
+            }
+        });
+
+        minuteInput.addEventListener('input', function() {
+            // Only update clock if not currently dragging
+            if (!isDragging) {
+                updateClockVisual();
+            }
+        });
 
         calculateBtn.addEventListener('click', function() {
             calculateSleepTimes();
@@ -1515,8 +1526,16 @@
                 // Restore text selection
                 document.body.style.userSelect = '';
 
-                // Update clock visual to ensure consistency
-                updateClockVisual();
+                // Don't call updateClockVisual() - let the hand stay where dragged
+                // The hand should remain at the exact position where released
+
+                // Add smooth transition back to normal state after a brief delay
+                setTimeout(() => {
+                    if (!isDragging) {
+                        hourHand.style.transition = 'transform 0.2s ease';
+                        minuteHand.style.transition = 'transform 0.2s ease';
+                    }
+                }, 100);
             }
         }
 
