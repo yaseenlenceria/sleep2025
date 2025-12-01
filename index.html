@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Cycle Calculator - Optimize Your Sleep | SleepCycle.io</title>
+    <meta name="description" content="Free sleep cycle calculator to find the perfect bedtime and wake-up times. Optimize your sleep by waking up at the end of sleep cycles. Wake up refreshed and energized.">
+    <meta name="keywords" content="sleep cycle calculator, sleep calculator, bedtime calculator, wake up time, sleep optimization, sleep cycles, REM sleep, deep sleep, sleep quality">
+    <meta name="author" content="SleepCycle.io">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sleepcycle.io/">
+    <meta property="og:title" content="Sleep Cycle Calculator - Optimize Your Sleep | SleepCycle.io">
+    <meta property="og:description" content="Free sleep cycle calculator to find the perfect bedtime and wake-up times. Optimize your sleep by waking up at the end of sleep cycles. Wake up refreshed and energized.">
+    <meta property="og:image" content="https://sleepcycle.io/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sleepcycle.io/">
+    <meta property="twitter:title" content="Sleep Cycle Calculator - Optimize Your Sleep | SleepCycle.io">
+    <meta property="twitter:description" content="Free sleep cycle calculator to find the perfect bedtime and wake-up times. Optimize your sleep by waking up at the end of sleep cycles.">
+    <meta property="twitter:image" content="https://sleepcycle.io/images/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Sleep Cycle Calculator",
+        "url": "https://sleepcycle.io",
+        "description": "Free sleep cycle calculator to find the perfect bedtime and wake-up times",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "SleepCycle.io",
+            "url": "https://sleepcycle.io"
+        }
+    }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a6de5;
+            --secondary-color: #5c7cfa;
+            --accent-color: #748ffc;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --text-color: #333;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 0;
+        }
+
+        .calculator-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .calculator-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .calculator-header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .calculator-header p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .calculator-body {
+            padding: 2rem;
+        }
+
+        .mode-toggle {
+            display: flex;
+            background: var(--light-color);
+            border-radius: 50px;
+            padding: 5px;
+            margin-bottom: 2rem;
+        }
+
+        .mode-btn {
+            flex: 1;
+            padding: 10px 20px;
+            border: none;
+            background: transparent;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+            color: var(--text-color);
+        }
+
+        .mode-btn.active {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            color: var(--primary-color);
+        }
+
+        .time-selector-container {
+            margin-bottom: 2rem;
+        }
+
+        .time-selector-label {
+            display: block;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+
+        .time-selector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .time-input-group {
+            display: flex;
+            align-items: center;
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 10px 15px;
+            margin: 0 10px;
+        }
+
+        .time-input {
+            border: none;
+            background: transparent;
+            font-size: 2.5rem;
+            font-weight: 600;
+            width: 100px;
+            text-align: center;
+            color: var(--dark-color);
+        }
+
+        .time-separator {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin: 0 5px;
+            color: var(--dark-color);
+        }
+
+        .ampm-toggle {
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+        }
+
+        .ampm-btn {
+            padding: 8px 15px;
+            border: none;
+            background: var(--light-color);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .ampm-btn:first-child {
+            border-radius: 10px 10px 0 0;
+            margin-bottom: 5px;
+        }
+
+        .ampm-btn:last-child {
+            border-radius: 0 0 10px 10px;
+        }
+
+        .ampm-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .clock-visual {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: var(--light-color);
+            position: relative;
+            margin: 0 auto 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .clock-visual:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .clock-visual.dragging {
+            cursor: grabbing;
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .clock-face {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .clock-number {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .clock-number span {
+            display: inline-block;
+            transform-origin: center;
+        }
+
+        .clock-hand {
+            position: absolute;
+            background: var(--primary-color);
+            transform-origin: bottom center;
+            border-radius: 10px;
+            transition: transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .hour-hand {
+            width: 6px;
+            height: 60px;
+            top: 65px;
+            left: 122px;
+        }
+
+        .minute-hand {
+            width: 4px;
+            height: 80px;
+            top: 45px;
+            left: 123px;
+        }
+
+        .clock-center {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            top: 119px;
+            left: 119px;
+        }
+
+        .calculate-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-bottom: 2rem;
+        }
+
+        .calculate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(74, 109, 229, 0.4);
+        }
+
+        .results-container {
+            background: var(--light-color);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            display: none;
+        }
+
+        .results-container.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .results-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .result-times {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 15px;
+        }
+
+        .result-time {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .result-time:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-time-value {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .result-time-label {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .info-box {
+            background: rgba(74, 109, 229, 0.1);
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            border-radius: 0 10px 10px 0;
+            margin-top: 2rem;
+        }
+
+        .info-box p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+
+        .info-box i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 1rem;
+            padding: 0 15px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin: 0 5px;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+            }
+
+            .calculator-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .time-input {
+                font-size: 2rem;
+            }
+
+            .clock-visual {
+                width: 200px;
+                height: 200px;
+            }
+
+            .hour-hand {
+                height: 50px;
+                top: 50px;
+                left: 97px;
+            }
+
+            .minute-hand {
+                height: 65px;
+                top: 35px;
+                left: 98px;
+            }
+
+            .clock-center {
+                top: 94px;
+                left: 94px;
+            }
+
+            .result-times {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-moon"></i>
+                    <span>SleepCycle.io</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="tips.html">Sleep Tips</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-header">
+                    <h1>Sleep Cycle Calculator</h1>
+                    <p>Optimize your sleep by waking up at the end of a sleep cycle</p>
+                </div>
+                <div class="calculator-body">
+                    <div class="mode-toggle">
+                        <button class="mode-btn active" id="bedtimeMode">Calculate Bedtime</button>
+                        <button class="mode-btn" id="wakeupMode">Calculate Wake-up Time</button>
+                    </div>
+
+                    <div class="time-selector-container">
+                        <label class="time-selector-label" id="timeLabel">What time do you want to wake up?</label>
+                        
+                        <div class="time-selector">
+                            <div class="time-input-group">
+                                <input type="number" class="time-input" id="hourInput" min="1" max="12" value="6">
+                                <span class="time-separator">:</span>
+                                <input type="number" class="time-input" id="minuteInput" min="0" max="59" value="30">
+                            </div>
+                            
+                            <div class="ampm-toggle">
+                                <button class="ampm-btn active" id="amBtn">AM</button>
+                                <button class="ampm-btn" id="pmBtn">PM</button>
+                            </div>
+                        </div>
+
+                        <div class="clock-visual">
+                            <div class="clock-face">
+                                <div class="clock-number" style="transform: rotate(30deg);">
+                                    <span style="transform: rotate(-30deg);">1</span>
+                                </div>
+                                <div class="clock-number" style="transform: rotate(60deg);">
+                                    <span style="transform: rotate(-60deg);">2</span>
+                                </div>
+                                <div class="clock-number" style="transform: rotate(90deg);">
+                                    <span style="transform: rotate(-90deg);">3</span>
+                                </div>
+                                <div class="clock-number" style="transform: rotate(120deg);">
+                                    <span style="transform: rotate(-120deg);">4</span>
+                                </div>
+                                <div class="clock-number" style="transform: rotate(150deg);">
+                                    <span style="transform: rotate(-150deg);">5</span>
+                                </div>
+                                <div class="clock-number" style="transform: rotate(180deg);">
+                                    <span style="transform: rotate(-180deg);">6</span>
+                                </div>
+                                <div class="clock-number" style="transform: rotate(210deg);">
+                                    <span style="transform: rotate(-210deg);">7</span>
+                                </div>
+                                <div class="clock-number" style="transform: rotate(240deg);">
+                                    <span style="transform: rotate(-240deg);">8</span>
+                                </div>
+                                <div class="clock-number" style="transform: rotate(270deg);">
+                                    <span style="transform: rotate(-270deg);">9</span>
+                                </div>
+                                <div class="clock-number" style="transform: rotate(300deg);">
+                                    <span style="transform: rotate(-300deg);">10</span>
+                                </div>
+                                <div class="clock-number" style="transform: rotate(330deg);">
+                                    <span style="transform: rotate(-330deg);">11</span>
+                                </div>
+                                <div class="clock-number" style="transform: rotate(0deg);">
+                                    <span>12</span>
+                                </div>
+                                <div class="clock-hand hour-hand" id="hourHand"></div>
+                                <div class="clock-hand minute-hand" id="minuteHand"></div>
+                                <div class="clock-center"></div>
+                            </div>
+                        </div>
+
+                        <button class="calculate-btn" id="calculateBtn">Calculate</button>
+
+                        <div class="results-container" id="resultsContainer">
+                            <div class="results-title" id="resultsTitle">To wake up refreshed at 6:30 AM, you should go to sleep at one of these times:</div>
+                            <div class="result-times" id="resultTimes"></div>
+                        </div>
+
+                        <div class="info-box">
+                            <p><i class="fas fa-info-circle"></i> The average human takes 15 minutes to fall asleep. Sleep cycles typically last 90 minutes, and a good night's sleep consists of 5-6 complete sleep cycles.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About SleepCycle.io</h3>
+                    <p>We help you optimize your sleep by understanding your natural sleep cycles and finding the best times to go to bed or wake up.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Sleep Cycles</a></li>
+                        <li><a href="tips.html">Sleep Tips</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="index.html">Sleep Calculator</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 SleepCycle.io. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // DOM elements
+        const bedtimeMode = document.getElementById('bedtimeMode');
+        const wakeupMode = document.getElementById('wakeupMode');
+        const timeLabel = document.getElementById('timeLabel');
+        const hourInput = document.getElementById('hourInput');
+        const minuteInput = document.getElementById('minuteInput');
+        const amBtn = document.getElementById('amBtn');
+        const pmBtn = document.getElementById('pmBtn');
+        const calculateBtn = document.getElementById('calculateBtn');
+        const resultsContainer = document.getElementById('resultsContainer');
+        const resultsTitle = document.getElementById('resultsTitle');
+        const resultTimes = document.getElementById('resultTimes');
+        const hourHand = document.getElementById('hourHand');
+        const minuteHand = document.getElementById('minuteHand');
+
+        // State
+        let isBedtimeMode = true;
+        let isAm = true;
+
+        // Initialize
+        updateClockVisual();
+        initializeClockInteraction();
+        initializeRealTimeClock();
+
+        // Event listeners
+        bedtimeMode.addEventListener('click', () => {
+            isBedtimeMode = true;
+            bedtimeMode.classList.add('active');
+            wakeupMode.classList.remove('active');
+            timeLabel.textContent = 'What time do you want to wake up?';
+            calculateBtn.textContent = 'Calculate Bedtime';
+            resultsContainer.classList.remove('show');
+        });
+
+        wakeupMode.addEventListener('click', () => {
+            isBedtimeMode = false;
+            wakeupMode.classList.add('active');
+            bedtimeMode.classList.remove('active');
+            timeLabel.textContent = 'What time do you want to go to bed?';
+            calculateBtn.textContent = 'Calculate Wake-up Time';
+            resultsContainer.classList.remove('show');
+        });
+
+        amBtn.addEventListener('click', () => {
+            isAm = true;
+            amBtn.classList.add('active');
+            pmBtn.classList.remove('active');
+            updateClockVisual();
+        });
+
+        pmBtn.addEventListener('click', () => {
+            isAm = false;
+            pmBtn.classList.add('active');
+            amBtn.classList.remove('active');
+            updateClockVisual();
+        });
+
+        hourInput.addEventListener('input', updateClockVisual);
+        minuteInput.addEventListener('input', updateClockVisual);
+
+        calculateBtn.addEventListener('click', calculateSleepTimes);
+
+        // Functions
+        function updateClockVisual() {
+            const hour = parseInt(hourInput.value);
+            const minute = parseInt(minuteInput.value);
+            
+            // Convert to 24-hour format for calculation
+            let hour24 = hour;
+            if (!isAm && hour < 12) {
+                hour24 = hour + 12;
+            } else if (isAm && hour === 12) {
+                hour24 = 0;
+            }
+            
+            // Calculate rotation angles
+            const hourAngle = (hour24 % 12) * 30 + (minute / 60) * 30;
+            const minuteAngle = minute * 6;
+            
+            // Apply rotations
+            hourHand.style.transform = `rotate(${hourAngle}deg)`;
+            minuteHand.style.transform = `rotate(${minuteAngle}deg)`;
+        }
+
+        function calculateSleepTimes() {
+            const hour = parseInt(hourInput.value);
+            const minute = parseInt(minuteInput.value);
+            
+            // Convert to 24-hour format for calculation
+            let hour24 = hour;
+            if (!isAm && hour < 12) {
+                hour24 = hour + 12;
+            } else if (isAm && hour === 12) {
+                hour24 = 0;
+            }
+            
+            // Convert to minutes
+            const totalMinutes = hour24 * 60 + minute;
+            
+            // Sleep cycle duration in minutes
+            const sleepCycle = 90;
+            // Time to fall asleep in minutes
+            const fallAsleepTime = 15;
+            
+            // Calculate sleep times
+            const sleepTimes = [];
+            
+            if (isBedtimeMode) {
+                // Calculate bedtimes for 6 sleep cycles (6, 5, 4, 3, 2, 1)
+                for (let i = 6; i >= 1; i--) {
+                    const bedtimeMinutes = totalMinutes - (i * sleepCycle) - fallAsleepTime;
+                    const adjustedTime = adjustTime(bedtimeMinutes);
+                    sleepTimes.push(adjustedTime);
+                }
+                
+                resultsTitle.textContent = `To wake up refreshed at ${formatTime(hour, minute, isAm)}, you should go to sleep at one of these times:`;
+            } else {
+                // Calculate wake-up times for 6 sleep cycles (6, 5, 4, 3, 2, 1)
+                for (let i = 1; i <= 6; i++) {
+                    const wakeTimeMinutes = totalMinutes + fallAsleepTime + (i * sleepCycle);
+                    const adjustedTime = adjustTime(wakeTimeMinutes);
+                    sleepTimes.push(adjustedTime);
+                }
+                
+                resultsTitle.textContent = `If you go to bed at ${formatTime(hour, minute, isAm)}, you should wake up at one of these times:`;
+            }
+            
+            // Display results
+            displayResults(sleepTimes);
+        }
+
+        function adjustTime(minutes) {
+            // Handle negative minutes and minutes > 1440 (24 hours)
+            let adjustedMinutes = minutes % 1440;
+            if (adjustedMinutes < 0) {
+                adjustedMinutes += 1440;
+            }
+            
+            const hour24 = Math.floor(adjustedMinutes / 60);
+            const minute = adjustedMinutes % 60;
+            
+            // Convert to 12-hour format
+            let hour12 = hour24 % 12;
+            if (hour12 === 0) {
+                hour12 = 12;
+            }
+            
+            const isAm = hour24 < 12;
+            
+            return {
+                hour: hour12,
+                minute: minute,
+                isAm: isAm,
+                cycles: isBedtimeMode ? Math.round((minutes + 15) / 90) : Math.round((minutes - 15) / 90)
+            };
+        }
+
+        function formatTime(hour, minute, isAm) {
+            const formattedMinute = minute < 10 ? `0${minute}` : minute;
+            return `${hour}:${formattedMinute} ${isAm ? 'AM' : 'PM'}`;
+        }
+
+        function displayResults(times) {
+            resultTimes.innerHTML = '';
+            
+            times.forEach((time, index) => {
+                const resultTime = document.createElement('div');
+                resultTime.className = 'result-time';
+                
+                const timeValue = document.createElement('div');
+                timeValue.className = 'result-time-value';
+                timeValue.textContent = formatTime(time.hour, time.minute, time.isAm);
+                
+                const timeLabel = document.createElement('div');
+                timeLabel.className = 'result-time-label';
+                
+                if (isBedtimeMode) {
+                    const cycles = times.length - index;
+                    timeLabel.textContent = cycles === 1 ? '1 cycle' : `${cycles} cycles`;
+                } else {
+                    timeLabel.textContent = index + 1 === 1 ? '1 cycle' : `${index + 1} cycles`;
+                }
+                
+                resultTime.appendChild(timeValue);
+                resultTime.appendChild(timeLabel);
+                resultTimes.appendChild(resultTime);
+            });
+            
+            resultsContainer.classList.add('show');
+        }
+
+        // Enhanced clock interaction
+        function initializeClockInteraction() {
+            const clockVisual = document.querySelector('.clock-visual');
+            let isDragging = false;
+            let startX, startY;
+
+            // Mouse events for desktop
+            clockVisual.addEventListener('mousedown', startDrag);
+            document.addEventListener('mousemove', drag);
+            document.addEventListener('mouseup', endDrag);
+
+            // Touch events for mobile
+            clockVisual.addEventListener('touchstart', startDrag);
+            document.addEventListener('touchmove', drag);
+            document.addEventListener('touchend', endDrag);
+
+            function startDrag(e) {
+                isDragging = true;
+                clockVisual.classList.add('dragging');
+
+                if (e.type === 'touchstart') {
+                    startX = e.touches[0].clientX - clockVisual.offsetLeft;
+                    startY = e.touches[0].clientY - clockVisual.offsetTop;
+                } else {
+                    startX = e.clientX - clockVisual.offsetLeft;
+                    startY = e.clientY - clockVisual.offsetTop;
+                }
+
+                e.preventDefault();
+            }
+
+            function drag(e) {
+                if (!isDragging) return;
+
+                let clientX, clientY;
+                if (e.type === 'touchmove') {
+                    clientX = e.touches[0].clientX;
+                    clientY = e.touches[0].clientY;
+                } else {
+                    clientX = e.clientX;
+                    clientY = e.clientY;
+                }
+
+                const x = clientX - startX;
+                const y = clientY - startY;
+
+                clockVisual.style.position = 'fixed';
+                clockVisual.style.left = x + 'px';
+                clockVisual.style.top = y + 'px';
+                clockVisual.style.zIndex = '1000';
+
+                e.preventDefault();
+            }
+
+            function endDrag() {
+                if (!isDragging) return;
+                isDragging = false;
+                clockVisual.classList.remove('dragging');
+
+                // Reset position with smooth animation
+                setTimeout(() => {
+                    clockVisual.style.position = 'relative';
+                    clockVisual.style.left = 'auto';
+                    clockVisual.style.top = 'auto';
+                    clockVisual.style.zIndex = 'auto';
+                }, 100);
+            }
+        }
+
+        // Real-time clock updates
+        function initializeRealTimeClock() {
+            setInterval(() => {
+                if (!document.hidden) {
+                    updateClockVisual();
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

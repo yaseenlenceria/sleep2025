@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Tips - Better Sleep Habits for Quality Rest | SleepCycle.io</title>
+    <meta name="description" content="Discover expert sleep tips and sleep hygiene practices to improve your sleep quality, fall asleep faster, and wake up refreshed.">
+    <meta name="keywords" content="sleep tips, sleep hygiene, better sleep, sleep habits, sleep quality, sleep routine">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a6de5;
+            --secondary-color: #5c7cfa;
+            --accent-color: #748ffc;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --text-color: #333;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem 0;
+        }
+
+        .tips-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            padding: 3rem 2rem;
+        }
+
+        .content-section:nth-child(even) {
+            background: var(--light-color);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .tip-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tip-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary-color);
+        }
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .tip-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .tip-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .tip-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .tip-benefits {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .benefit-tag {
+            display: inline-block;
+            background: rgba(74, 109, 229, 0.1);
+            color: var(--primary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin: 0.2rem;
+        }
+
+        .routine-section {
+            background: linear-gradient(135deg, rgba(74, 109, 229, 0.1), rgba(92, 124, 250, 0.1));
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .routine-timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .routine-item {
+            display: flex;
+            align-items: center;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .routine-time {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.2rem;
+            border-radius: 10px;
+            font-weight: 600;
+            min-width: 100px;
+            text-align: center;
+            margin-right: 1.5rem;
+        }
+
+        .routine-content h4 {
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .dos-donts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .dos-donts-card {
+            padding: 2rem;
+            border-radius: 15px;
+        }
+
+        .dos-card {
+            background: rgba(40, 167, 69, 0.1);
+            border: 2px solid var(--success-color);
+        }
+
+        .donts-card {
+            background: rgba(220, 53, 69, 0.1);
+            border: 2px solid var(--danger-color);
+        }
+
+        .dos-donts-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .dos-donts-title i {
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+
+        .dos-title {
+            color: var(--success-color);
+        }
+
+        .donts-title {
+            color: var(--danger-color);
+        }
+
+        .dos-donts-list {
+            list-style: none;
+        }
+
+        .dos-donts-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .dos-donts-list li:last-child {
+            border-bottom: none;
+        }
+
+        .dos-donts-list li i {
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        .dos-list i {
+            color: var(--success-color);
+        }
+
+        .donts-list i {
+            color: var(--danger-color);
+        }
+
+        .environment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .environment-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .environment-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .environment-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .environment-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+
+        .environment-value {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        .cta-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-description {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin: 0 5px;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .routine-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .routine-time {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-moon"></i>
+                    <span>SleepCycle.io</span>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">Calculator</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="tips.html">Sleep Tips</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="tips-container">
+                <div class="page-header">
+                    <h1>Sleep Better Tonight</h1>
+                    <p>Expert tips and strategies to improve your sleep quality and wake up refreshed every morning</p>
+                </div>
+
+                <section class="content-section">
+                    <h2 class="section-title">Essential Sleep Habits</h2>
+                    <div class="tips-grid">
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h3 class="tip-title">Consistent Schedule</h3>
+                            <p class="tip-description">Go to bed and wake up at the same time every day, even on weekends. This regulates your body's internal clock and helps you fall asleep and wake up naturally.</p>
+                            <div class="tip-benefits">
+                                <span class="benefit-tag">Regulates circadian rhythm</span>
+                                <span class="benefit-tag">Improves sleep quality</span>
+                            </div>
+                        </div>
+
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <i class="fas fa-laptop-slash"></i>
+                            </div>
+                            <h3 class="tip-title">Limit Screen Time</h3>
+                            <p class="tip-description">Avoid screens (phones, tablets, computers) for at least 1 hour before bed. Blue light exposure can disrupt your melatonin production and delay sleep.</p>
+                            <div class="tip-benefits">
+                                <span class="benefit-tag">Reduces eye strain</span>
+                                <span class="benefit-tag">Natural melatonin production</span>
+                            </div>
+                        </div>
+
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <i class="fas fa-coffee"></i>
+                            </div>
+                            <h3 class="tip-title">Watch Your Intake</h3>
+                            <p class="tip-description">Avoid caffeine for 6-8 hours before bedtime and limit alcohol. Both can significantly disrupt your sleep patterns and reduce sleep quality.</p>
+                            <div class="tip-benefits">
+                                <span class="benefit-tag">Fewer nighttime awakenings</span>
+                                <span class="benefit-tag">Deeper sleep</span>
+                            </div>
+                        </div>
+
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <i class="fas fa-sun"></i>
+                            </div>
+                            <h3 class="tip-title">Get Morning Light</h3>
+                            <p class="tip-description">Expose yourself to natural sunlight shortly after waking. This helps reset your circadian rhythm and signals to your body that it's time to be alert.</p>
+                            <div class="tip-benefits">
+                                <span class="benefit-tag">Boosts energy</span>
+                                <span class="benefit-tag">Regulates sleep-wake cycle</span>
+                            </div>
+                        </div>
+
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <i class="fas fa-dumbbell"></i>
+                            </div>
+                            <h3 class="tip-title">Regular Exercise</h3>
+                            <p class="tip-description">Exercise regularly but avoid intense workouts within 3 hours of bedtime. Physical activity can significantly improve sleep quality and duration.</p>
+                            <div class="tip-benefits">
+                                <span class="benefit-tag">Deeper sleep</span>
+                                <span class="benefit-tag">Faster sleep onset</span>
+                            </div>
+                        </div>
+
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3 class="tip-title">Manage Stress</h3>
+                            <p class="tip-description">Practice relaxation techniques like meditation, deep breathing, or gentle stretching before bed to calm your mind and prepare for sleep.</p>
+                            <div class="tip-benefits">
+                                <span class="benefit-tag">Reduces racing thoughts</span>
+                                <span class="benefit-tag">Promotes relaxation</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2 class="section-title">Your Ideal Evening Routine</h2>
+                    <div class="routine-section">
+                        <div class="routine-timeline">
+                            <div class="routine-item">
+                                <div class="routine-time">8:00 PM</div>
+                                <div class="routine-content">
+                                    <h4>Finish Dinner</h4>
+                                    <p>Complete your last meal 2-3 hours before bedtime to allow for proper digestion.</p>
+                                </div>
+                            </div>
+                            <div class="routine-item">
+                                <div class="routine-time">9:00 PM</div>
+                                <div class="routine-content">
+                                    <h4>Dim the Lights</h4>
+                                    <p>Lower the lights in your home to signal to your body that it's time to wind down.</p>
+                                </div>
+                            </div>
+                            <div class="routine-item">
+                                <div class="routine-time">9:30 PM</div>
+                                <div class="routine-content">
+                                    <h4>Relaxation Time</h4>
+                                    <p>Read a book, listen to calm music, or practice gentle stretching. Avoid screens and stimulating activities.</p>
+                                </div>
+                            </div>
+                            <div class="routine-item">
+                                <div class="routine-time">10:00 PM</div>
+                                <div class="routine-content">
+                                    <h4>Prepare for Bed</h4>
+                                    <p>Brush your teeth, wash your face, and change into comfortable sleepwear.</p>
+                                </div>
+                            </div>
+                            <div class="routine-item">
+                                <div class="routine-time">10:30 PM</div>
+                                <div class="routine-content">
+                                    <h4>Lights Out</h4>
+                                    <p>Get into bed and focus on relaxing. Don't force sleep – let it come naturally.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2 class="section-title">Sleep Environment Optimization</h2>
+                    <div class="environment-grid">
+                        <div class="environment-item">
+                            <div class="environment-icon">
+                                <i class="fas fa-thermometer-half"></i>
+                            </div>
+                            <h4 class="environment-title">Temperature</h4>
+                            <p class="environment-value">60-67°F (15-19°C)</p>
+                        </div>
+                        <div class="environment-item">
+                            <div class="environment-icon">
+                                <i class="fas fa-volume-mute"></i>
+                            </div>
+                            <h4 class="environment-title">Noise Level</h4>
+                            <p class="environment-value">Quiet or white noise</p>
+                        </div>
+                        <div class="environment-item">
+                            <div class="environment-icon">
+                                <i class="fas fa-adjust"></i>
+                            </div>
+                            <h4 class="environment-title">Lighting</h4>
+                            <p class="environment-value">Completely dark</p>
+                        </div>
+                        <div class="environment-item">
+                            <div class="environment-icon">
+                                <i class="fas fa-bed"></i>
+                            </div>
+                            <h4 class="environment-title">Bedding</h4>
+                            <p class="environment-value">Comfortable & supportive</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2 class="section-title">Sleep Do's and Don'ts</h2>
+                    <div class="dos-donts">
+                        <div class="dos-donts-card dos-card">
+                            <h3 class="dos-donts-title dos-title">
+                                <i class="fas fa-check-circle"></i>
+                                Do This
+                            </h3>
+                            <ul class="dos-donts-list dos-list">
+                                <li><i class="fas fa-check"></i> Make your bedroom comfortable and relaxing</li>
+                                <li><i class="fas fa-check"></i> Use your bed only for sleep and intimacy</li>
+                                <li><i class="fas fa-check"></i> Take a warm bath before bed</li>
+                                <li><i class="fas fa-check"></i> Write down worries before sleep</li>
+                                <li><i class="fas fa-check"></i> Keep a regular sleep schedule</li>
+                                <li><i class="fas fa-check"></i> Use blackout curtains or eye masks</li>
+                                <li><i class="fas fa-check"></i> Try aromatherapy with lavender</li>
+                            </ul>
+                        </div>
+                        <div class="dos-donts-card donts-card">
+                            <h3 class="dos-donts-title donts-title">
+                                <i class="fas fa-times-circle"></i>
+                                Avoid This
+                            </h3>
+                            <ul class="dos-donts-list donts-list">
+                                <li><i class="fas fa-times"></i> Watch TV in bed</li>
+                                <li><i class="fas fa-times"></i> Use your phone before sleep</li>
+                                <li><i class="fas fa-times"></i> Eat large meals before bed</li>
+                                <li><i class="fas fa-times"></i> Take long naps after 3 PM</li>
+                                <li><i class="fas fa-times"></i> Drink lots of liquids before bed</li>
+                                <li><i class="fas fa-times"></i> Work in your bedroom</li>
+                                <li><i class="fas fa-times"></i> Force yourself to sleep</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2 class="section-title">Natural Sleep Aids</h2>
+                    <div class="tips-grid">
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h3 class="tip-title">Herbal Teas</h3>
+                            <p class="tip-description">Chamomile, valerian root, and passionflower teas can naturally promote relaxation and sleepiness without side effects.</p>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <h3 class="tip-title">Meditation</h3>
+                            <p class="tip-description">Mindfulness meditation and body scan exercises can calm your nervous system and prepare your body for rest.</p>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <i class="fas fa-music"></i>
+                            </div>
+                            <h3 class="tip-title">White Noise</h3>
+                            <p class="tip-description">Gentle background noise or nature sounds can mask disruptive noises and create a soothing sleep environment.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="cta-section">
+                    <h2 class="cta-title">Ready to Transform Your Sleep?</h2>
+                    <p class="cta-description">Use our sleep cycle calculator to find the perfect bedtime that works with your natural sleep rhythms.</p>
+                    <a href="index.html" class="cta-button">
+                        Calculate Your Sleep Schedule
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 SleepCycle.io. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

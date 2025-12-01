@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - SleepCycle.io</title>
+    <meta name="description" content="Terms of service for SleepCycle.io - Read our terms and conditions for using our sleep cycle calculator.">
+    <meta name="robots" content="index, follow">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a6de5;
+            --secondary-color: #5c7cfa;
+            --accent-color: #748ffc;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --text-color: #333;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem 0;
+        }
+
+        .terms-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .content-section {
+            padding: 3rem 2rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .subsection-title {
+            font-size: 1.3rem;
+            color: var(--dark-color);
+            margin: 2rem 0 1rem 0;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        ul {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .warning-box {
+            background: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid var(--warning-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .contact-info {
+            background: var(--light-color);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .last-updated {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin: 0 5px;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .content-section {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-moon"></i>
+                    <span>SleepCycle.io</span>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="terms-container">
+                <div class="page-header">
+                    <h1>Terms of Service</h1>
+                    <p>By using SleepCycle.io, you agree to these terms and conditions</p>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Acceptance of Terms</h2>
+                    <p>
+                        By accessing and using SleepCycle.io, you accept and agree to be bound by the terms and provision of this agreement.
+                        If you do not agree to abide by the above, please do not use this service.
+                    </p>
+
+                    <h2 class="section-title">Description of Service</h2>
+                    <p>
+                        SleepCycle.io is a free sleep cycle calculator that helps users determine optimal bedtimes and wake-up times
+                        based on 90-minute sleep cycles. The service is provided "as is" without any warranties.
+                    </p>
+
+                    <div class="warning-box">
+                        <strong>Medical Disclaimer:</strong> SleepCycle.io is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.
+                    </div>
+
+                    <h2 class="section-title">User Responsibilities</h2>
+                    <p>As a user of SleepCycle.io, you agree to:</p>
+                    <ul>
+                        <li>Use the service for lawful purposes only</li>
+                        <li>Not attempt to reverse engineer or hack the website</li>
+                        <li>Not use the service to transmit malicious code</li>
+                        <li>Respect the intellectual property rights of SleepCycle.io</li>
+                        <li>Not hold SleepCycle.io responsible for sleep-related decisions</li>
+                    </ul>
+
+                    <h2 class="section-title">Privacy</h2>
+                    <p>
+                        Your privacy is important to us. Please review our Privacy Policy, which also governs your use of the Service,
+                        to understand our practices. The use of the service is also governed by our Privacy Policy.
+                    </p>
+
+                    <h2 class="section-title">Accuracy of Information</h2>
+                    <p>
+                        The information on this website is provided on an "as is" basis. While we strive to provide accurate sleep cycle calculations,
+                        individual sleep patterns vary. The calculations provided are estimates and should not be considered as medical advice.
+                    </p>
+
+                    <h2 class="section-title">Limitation of Liability</h2>
+                    <p>
+                        IN NO EVENT SHALL SLEEPCYCLE.IO, ITS OWNERS, EMPLOYEES, OR AFFILIATES BE LIABLE FOR ANY INDIRECT, INCIDENTAL,
+                        SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION, LOSS OF PROFITS, DATA, USE, GOODWILL,
+                        OR OTHER INTANGIBLE LOSSES, RESULTING FROM YOUR USE OF THE SERVICE.
+                    </p>
+
+                    <h2 class="section-title">Medical Advice Disclaimer</h2>
+                    <p>
+                        The sleep cycle calculator and related content on SleepCycle.io are for informational and educational purposes only.
+                        They are not intended to be a substitute for professional medical advice, diagnosis, or treatment.
+                    </p>
+
+                    <p>Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.</p>
+
+                    <h2 class="section-title">Intellectual Property Rights</h2>
+                    <p>
+                        The service and its original content, features and functionality are and will remain the exclusive property of SleepCycle.io and its licensors.
+                        The service is protected by copyright, trademark, and other laws.
+                    </p>
+
+                    <h2 class="section-title">Termination</h2>
+                    <p>
+                        We may terminate or suspend your access immediately, without prior notice or liability, for any reason whatsoever,
+                        including without limitation if you breach the Terms.
+                    </p>
+
+                    <h2 class="section-title">Governing Law</h2>
+                    <p>
+                        These Terms shall be interpreted and governed by the laws of the United States, without regard to its conflict of law provisions.
+                    </p>
+
+                    <h2 class="section-title">Changes to Terms</h2>
+                    <p>
+                        We reserve the right, at our sole discretion, to modify or replace these Terms at any time.
+                        If a revision is material, we will provide at least 30 days notice prior to any new terms taking effect.
+                    </p>
+
+                    <h2 class="section-title">Contact Information</h2>
+                    <p>
+                        If you have any questions about these Terms of Service, please contact us.
+                    </p>
+
+                    <div class="contact-info">
+                        <h3>Contact Us</h3>
+                        <ul>
+                            <li>Email: legal@sleepcycle.io</li>
+                            <li>Website: https://sleepcycle.io</li>
+                            <li>Address: Online Service</li>
+                        </ul>
+                    </div>
+
+                    <h2 class="section-title">Severability</h2>
+                    <p>
+                        If any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and interpreted
+                        to accomplish the objectives of such provision to the greatest extent possible under applicable law
+                        and the remaining provisions will continue in full force and effect.
+                    </p>
+
+                    <h2 class="section-title">Entire Agreement</h2>
+                    <p>
+                        These Terms constitute the entire agreement between you and SleepCycle.io regarding your use of the Service,
+                        superseding any prior agreements between you and SleepCycle.io.
+                    </p>
+
+                    <p class="last-updated">Last Updated: December 1, 2023</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 SleepCycle.io. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

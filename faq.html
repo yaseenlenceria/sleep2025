@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep FAQ - Frequently Asked Questions About Sleep | SleepCycle.io</title>
+    <meta name="description" content="Get answers to common questions about sleep cycles, sleep disorders, sleep hygiene, and how to improve your sleep quality.">
+    <meta name="keywords" content="sleep FAQ, sleep questions, sleep problems, sleep disorders, sleep cycle FAQ, sleep help">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a6de5;
+            --secondary-color: #5c7cfa;
+            --accent-color: #748ffc;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --text-color: #333;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem 0;
+        }
+
+        .faq-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .search-section {
+            padding: 2rem;
+            background: var(--light-color);
+        }
+
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: white;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(74, 109, 229, 0.1);
+        }
+
+        .search-button {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .search-button:hover {
+            background: var(--secondary-color);
+        }
+
+        .content-section {
+            padding: 3rem 2rem;
+        }
+
+        .faq-category {
+            margin-bottom: 3rem;
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .category-title i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            font-size: 1.1rem;
+            color: var(--dark-color);
+            background: white;
+            border: none;
+            width: 100%;
+            text-align: left;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: var(--light-color);
+        }
+
+        .faq-question.active {
+            color: var(--primary-color);
+            background: rgba(74, 109, 229, 0.05);
+        }
+
+        .faq-icon {
+            transition: var(--transition);
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .faq-question.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .faq-answer-content ul {
+            margin-left: 20px;
+            margin-top: 0.5rem;
+        }
+
+        .faq-answer-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .help-section {
+            background: linear-gradient(135deg, rgba(74, 109, 229, 0.1), rgba(92, 124, 250, 0.1));
+            padding: 2rem;
+            text-align: center;
+            border-radius: 15px;
+            margin: 2rem;
+        }
+
+        .help-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .help-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .help-button {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .help-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .help-button i {
+            margin-right: 8px;
+        }
+
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .quick-link-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            text-decoration: none;
+            color: var(--dark-color);
+        }
+
+        .quick-link-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .quick-link-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .quick-link-title {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .quick-link-description {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+            display: none;
+        }
+
+        .no-results i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin: 0 5px;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .help-buttons {
+                flex-direction: column;
+            }
+
+            .quick-links {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-moon"></i>
+                    <span>SleepCycle.io</span>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">Calculator</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="tips.html">Sleep Tips</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="faq-container">
+                <div class="page-header">
+                    <h1>Sleep FAQ</h1>
+                    <p>Get answers to your most common questions about sleep, sleep cycles, and better rest</p>
+                </div>
+
+                <div class="search-section">
+                    <div class="search-box">
+                        <input type="text" class="search-input" id="searchInput" placeholder="Search for answers...">
+                        <button class="search-button" id="searchButton">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <div class="quick-links">
+                        <a href="#sleep-cycles" class="quick-link-card">
+                            <div class="quick-link-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <div class="quick-link-title">Sleep Cycles</div>
+                            <div class="quick-link-description">Understanding sleep stages</div>
+                        </a>
+                        <a href="#sleep-problems" class="quick-link-card">
+                            <div class="quick-link-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="quick-link-title">Sleep Problems</div>
+                            <div class="quick-link-description">Common sleep issues</div>
+                        </a>
+                        <a href="#sleep-hygiene" class="quick-link-card">
+                            <div class="quick-link-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="quick-link-title">Sleep Hygiene</div>
+                            <div class="quick-link-description">Healthy sleep habits</div>
+                        </a>
+                        <a href="#sleep-health" class="quick-link-card">
+                            <div class="quick-link-icon">
+                                <i class="fas fa-notes-medical"></i>
+                            </div>
+                            <div class="quick-link-title">Sleep Health</div>
+                            <div class="quick-link-description">Medical sleep topics</div>
+                        </a>
+                    </div>
+
+                    <div class="no-results" id="noResults">
+                        <i class="fas fa-search"></i>
+                        <h3>No results found</h3>
+                        <p>Try searching with different keywords or browse our categories above.</p>
+                    </div>
+
+                    <div class="faq-category" id="sleep-cycles">
+                        <h2 class="category-title">
+                            <i class="fas fa-sync-alt"></i>
+                            Sleep Cycles
+                        </h2>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                What is a sleep cycle?
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    A sleep cycle is a 90-minute period during which your brain progresses through different stages of sleep. Each cycle includes light sleep, deep sleep, and REM sleep. A typical night consists of 4-6 complete sleep cycles.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                How long does one sleep cycle last?
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    Most sleep cycles last approximately 90 minutes, though this can vary between individuals from 70-120 minutes. The first cycle of the night is usually shorter, while later cycles tend to be longer.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                What happens if I wake up during deep sleep?
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    Waking up during deep sleep often causes sleep inertia - that groggy, disoriented feeling. This is because your brain hasn't completed its natural progression through the sleep cycle. That's why timing your wake-up with our sleep cycle calculator helps you feel more refreshed.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                How many sleep cycles do I need?
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    Most adults need 4-6 complete sleep cycles per night, which equals 7.5-9 hours of sleep. However, individual needs can vary based on age, genetics, and lifestyle factors.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-category" id="sleep-problems">
+                        <h2 class="category-title">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            Sleep Problems
+                        </h2>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                Why can't I fall asleep at night?
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    Difficulty falling asleep (insomnia) can be caused by:
+                                    <ul>
+                                        <li>Stress and anxiety</li>
+                                        <li>Poor sleep habits</li>
+                                        <li>Excessive screen time before bed</li>
+                                        <li>Caffeine or alcohol consumption</li>
+                                        <li>Uncomfortable sleep environment</li>
+                                        <li>Medical conditions or medications</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                What is sleep inertia?
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    Sleep inertia is the groggy, disoriented feeling you experience when you first wake up. It typically lasts 15-60 minutes and is more severe when waking up during deep sleep. Our calculator helps minimize sleep inertia by timing wake-ups during lighter sleep stages.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                Is it bad to wake up frequently during the night?
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    Waking up 1-2 times per night is normal. However, frequent awakenings (3+ times) can disrupt your sleep cycles and reduce sleep quality. This might be caused by sleep apnea, stress, or poor sleep hygiene.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                Should I take naps during the day?
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    Short naps (20-30 minutes) can be beneficial and don't typically interfere with nighttime sleep. Longer naps may disrupt your sleep schedule. Avoid napping after 3 PM as it can make it harder to fall asleep at night.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-category" id="sleep-hygiene">
+                        <h2 class="category-title">
+                            <i class="fas fa-heart"></i>
+                            Sleep Hygiene
+                        </h2>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                What is sleep hygiene?
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    Sleep hygiene refers to habits and practices that promote good sleep quality. This includes maintaining a consistent sleep schedule, creating a comfortable sleep environment, and avoiding behaviors that interfere with sleep.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                How does caffeine affect sleep?
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    Caffeine can stay in your system for 6-8 hours and significantly disrupt sleep quality. It blocks sleep-promoting chemicals in your brain and can reduce deep sleep by up to 20%. Avoid caffeine at least 6-8 hours before bedtime.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                Does exercise help or hurt sleep?
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    Regular exercise generally improves sleep quality, helping you fall asleep faster and enjoy deeper sleep. However, intense exercise within 3 hours of bedtime can be stimulating and may interfere with sleep for some people.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                What's the ideal room temperature for sleep?
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    The optimal temperature for sleep is between 60-67°F (15-19°C). Your body temperature naturally drops during sleep, and a cool room facilitates this process. Too hot or too cold environments can disrupt sleep.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-category" id="sleep-health">
+                        <h2 class="category-title">
+                            <i class="fas fa-notes-medical"></i>
+                            Sleep Health
+                        </h2>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                How much sleep do I really need?
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    Sleep needs vary by age:
+                                    <ul>
+                                        <li>Adults (18-64): 7-9 hours</li>
+                                        <li>Teenagers (14-17): 8-10 hours</li>
+                                        <li>Older adults (65+): 7-8 hours</li>
+                                        <li>Children (6-13): 9-11 hours</li>
+                                    </ul>
+                                    Quality of sleep is just as important as quantity.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                What are the signs of a sleep disorder?
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    Common signs of sleep disorders include:
+                                    <ul>
+                                        <li>Loud snoring or gasping during sleep</li>
+                                        <li>Daytime sleepiness despite adequate sleep time</li>
+                                        <li>Difficulty falling or staying asleep</li>
+                                        <li>Morning headaches</li>
+                                        <li>Irritability and mood changes</li>
+                                        <li>Waking up frequently during the night</li>
+                                    </ul>
+                                    If you experience these symptoms, consult a healthcare provider.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                Can I catch up on lost sleep?
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    You can partially recover from sleep debt, but it's not a perfect solution. Sleeping extra hours on weekends can help, but chronic sleep loss can't be fully recovered. It's better to maintain consistent sleep habits than to rely on catch-up sleep.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                Is it normal to dream every night?
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    Yes, everyone dreams every night during REM sleep, even if you don't remember your dreams. Most people have 4-6 dream periods per night, with each dream lasting longer as the night progresses.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="help-section">
+                    <h3 class="help-title">Still have questions?</h3>
+                    <p>Can't find what you're looking for? We're here to help!</p>
+                    <div class="help-buttons">
+                        <a href="index.html" class="help-button">
+                            <i class="fas fa-calculator"></i>
+                            Try Sleep Calculator
+                        </a>
+                        <a href="tips.html" class="help-button">
+                            <i class="fas fa-lightbulb"></i>
+                            Sleep Tips
+                        </a>
+                        <a href="about.html" class="help-button">
+                            <i class="fas fa-info-circle"></i>
+                            Learn About Sleep
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 SleepCycle.io. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            const searchInput = document.getElementById('searchInput');
+            const searchButton = document.getElementById('searchButton');
+            const noResults = document.getElementById('noResults');
+            const faqItems = document.querySelectorAll('.faq-item');
+            const faqCategories = document.querySelectorAll('.faq-category');
+
+            // FAQ accordion
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const isActive = this.classList.contains('active');
+                    const answer = this.nextElementSibling;
+
+                    // Close all other FAQs
+                    faqQuestions.forEach(otherQuestion => {
+                        if (otherQuestion !== this) {
+                            otherQuestion.classList.remove('active');
+                            otherQuestion.nextElementSibling.classList.remove('active');
+                        }
+                    });
+
+                    // Toggle current FAQ
+                    this.classList.toggle('active');
+                    answer.classList.toggle('active');
+                });
+            });
+
+            // Search functionality
+            function performSearch() {
+                const searchTerm = searchInput.value.toLowerCase().trim();
+                let hasResults = false;
+
+                if (searchTerm === '') {
+                    // Show all items if search is empty
+                    faqItems.forEach(item => {
+                        item.style.display = 'block';
+                    });
+                    faqCategories.forEach(category => {
+                        category.style.display = 'block';
+                    });
+                    noResults.style.display = 'none';
+                    return;
+                }
+
+                // Hide all categories initially
+                faqCategories.forEach(category => {
+                    category.style.display = 'none';
+                });
+
+                // Search through FAQ items
+                faqItems.forEach(item => {
+                    const question = item.querySelector('.faq-question').textContent.toLowerCase();
+                    const answer = item.querySelector('.faq-answer-content').textContent.toLowerCase();
+
+                    if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                        item.style.display = 'block';
+                        // Show the parent category
+                        item.closest('.faq-category').style.display = 'block';
+                        hasResults = true;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                // Show/hide no results message
+                noResults.style.display = hasResults ? 'none' : 'block';
+            }
+
+            searchButton.addEventListener('click', performSearch);
+            searchInput.addEventListener('input', performSearch);
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+
+            // Smooth scroll to category when clicking quick links
+            document.querySelectorAll('.quick-link-card').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

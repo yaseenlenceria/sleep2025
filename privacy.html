@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - SleepCycle.io</title>
+    <meta name="description" content="Privacy policy for SleepCycle.io - Learn how we protect your data and privacy when using our sleep cycle calculator.">
+    <meta name="robots" content="index, follow">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a6de5;
+            --secondary-color: #5c7cfa;
+            --accent-color: #748ffc;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --text-color: #333;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem 0;
+        }
+
+        .privacy-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .content-section {
+            padding: 3rem 2rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .subsection-title {
+            font-size: 1.3rem;
+            color: var(--dark-color);
+            margin: 2rem 0 1rem 0;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        ul {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box {
+            background: rgba(74, 109, 229, 0.1);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .contact-info {
+            background: var(--light-color);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .last-updated {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin: 0 5px;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .content-section {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-moon"></i>
+                    <span>SleepCycle.io</span>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="privacy-container">
+                <div class="page-header">
+                    <h1>Privacy Policy</h1>
+                    <p>Your privacy is important to us. This policy explains how we collect, use, and protect your information.</p>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Introduction</h2>
+                    <p>
+                        Welcome to SleepCycle.io. We respect your privacy and are committed to protecting your personal data.
+                        This privacy policy explains how we collect, use, and safeguard your information when you use our sleep cycle calculator website.
+                    </p>
+
+                    <div class="highlight-box">
+                        <strong>Important Note:</strong> SleepCycle.io is designed to work entirely in your browser. We do not collect, store, or transmit any personal sleep data to our servers. Your calculations remain private on your device.
+                    </div>
+
+                    <h2 class="section-title">Information We Collect</h2>
+
+                    <h3 class="subsection-title">Automatically Collected Information</h3>
+                    <p>We may automatically collect certain technical information when you visit our website:</p>
+                    <ul>
+                        <li>IP address (anonymized)</li>
+                        <li>Browser type and version</li>
+                        <li>Operating system</li>
+                        <li>Device information</li>
+                        <li>Pages visited and time spent on our site</li>
+                        <li>Referring website</li>
+                    </ul>
+
+                    <h3 class="subsection-title">Information You Provide</h3>
+                    <p>SleepCycle.io does not require you to provide any personal information to use our sleep cycle calculator.
+                    If you choose to contact us, we may collect your email address and any information you voluntarily provide.</p>
+
+                    <h2 class="section-title">How We Use Your Information</h2>
+                    <p>We use the collected information for the following purposes:</p>
+                    <ul>
+                        <li>To provide and maintain our website</li>
+                        <li>To analyze website usage and improve our services</li>
+                        <li>To respond to your inquiries and provide customer support</li>
+                        <li>To ensure the security of our website</li>
+                        <li>To comply with legal obligations</li>
+                    </ul>
+
+                    <h2 class="section-title">Sleep Data Privacy</h2>
+                    <p>
+                        Your sleep calculations and personal sleep data are processed locally in your web browser and are never transmitted to our servers.
+                        We do not store, track, or analyze your personal sleep patterns. Your sleep information remains completely private to you.
+                    </p>
+
+                    <h2 class="section-title">Cookies and Tracking</h2>
+                    <p>We use minimal cookies and tracking technologies:</p>
+                    <ul>
+                        <li><strong>Essential Cookies:</strong> Required for basic website functionality</li>
+                        <li><strong>Analytics Cookies:</strong> Anonymized usage statistics to improve our service</li>
+                        <li><strong>No personal data collection</strong> through our calculator</li>
+                    </ul>
+
+                    <h2 class="section-title">Third-Party Services</h2>
+                    <p>We may use the following third-party services:</p>
+                    <ul>
+                        <li>Google Analytics (anonymized data only)</li>
+                        <li>Content Delivery Networks for faster page loading</li>
+                        <li>Font providers (Google Fonts)</li>
+                    </ul>
+
+                    <h2 class="section-title">Data Security</h2>
+                    <p>
+                        We implement appropriate security measures to protect your information against unauthorized access,
+                        alteration, disclosure, or destruction. Since our calculator works entirely in your browser,
+                        your personal sleep data never leaves your device.
+                    </p>
+
+                    <h2 class="section-title">Your Rights</h2>
+                    <p>You have the following rights regarding your data:</p>
+                    <ul>
+                        <li>Access to your personal information</li>
+                        <li>Correction of inaccurate information</li>
+                        <li>Deletion of your personal information</li>
+                        <li>Restriction of processing</li>
+                        <li>Data portability</li>
+                    </ul>
+
+                    <h2 class="section-title">Children's Privacy</h2>
+                    <p>
+                        Our website is not directed to children under 13. We do not knowingly collect personal information
+                        from children under 13. If you are a parent or guardian and believe your child has provided us
+                        with personal information, please contact us.
+                    </p>
+
+                    <h2 class="section-title">International Users</h2>
+                    <p>
+                        SleepCycle.io may be accessed from around the world. If you are accessing our website from
+                        outside the United States, please be aware that your information may be transferred to, stored,
+                        and processed in the United States.
+                    </p>
+
+                    <h2 class="section-title">Changes to This Privacy Policy</h2>
+                    <p>
+                        We may update this privacy policy from time to time. We will notify you of any changes by
+                        posting the new privacy policy on this page and updating the "Last Updated" date.
+                    </p>
+
+                    <div class="contact-info">
+                        <h3>Contact Us</h3>
+                        <p>If you have any questions about this privacy policy or our data practices, please contact us:</p>
+                        <ul>
+                            <li>Email: privacy@sleepcycle.io</li>
+                            <li>Website: https://sleepcycle.io</li>
+                        </ul>
+                    </div>
+
+                    <p class="last-updated">Last Updated: December 1, 2023</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 SleepCycle.io. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

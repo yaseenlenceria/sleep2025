@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Blog - Expert Articles on Sleep Science | SleepCycle.io</title>
+    <meta name="description" content="Read expert articles on sleep science, sleep health, and wellness. Discover the latest research and tips for better sleep quality.">
+    <meta name="keywords" content="sleep blog, sleep science, sleep research, sleep health, sleep wellness, sleep articles">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a6de5;
+            --secondary-color: #5c7cfa;
+            --accent-color: #748ffc;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --text-color: #333;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem 0;
+        }
+
+        .blog-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            padding: 3rem 2rem;
+        }
+
+        .featured-article {
+            background: linear-gradient(135deg, rgba(74, 109, 229, 0.05), rgba(92, 124, 250, 0.05));
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .featured-label {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .article-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-category {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--primary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .article-content {
+            padding: 1.5rem;
+        }
+
+        .article-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+            line-height: 1.4;
+        }
+
+        .article-excerpt {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        .article-date {
+            display: flex;
+            align-items: center;
+        }
+
+        .article-date i {
+            margin-right: 5px;
+        }
+
+        .read-time {
+            display: flex;
+            align-items: center;
+        }
+
+        .read-time i {
+            margin-right: 5px;
+        }
+
+        .category-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .category-btn {
+            background: white;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .newsletter-section {
+            background: linear-gradient(135deg, rgba(74, 109, 229, 0.1), rgba(92, 124, 250, 0.1));
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 15px;
+            margin: 3rem 2rem;
+        }
+
+        .newsletter-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-description {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: #666;
+        }
+
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 12px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .newsletter-button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .newsletter-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .popular-tags {
+            padding: 2rem;
+            background: var(--light-color);
+        }
+
+        .tags-title {
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .tags-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+
+        .tag {
+            background: white;
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid var(--primary-color);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .tag:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .load-more {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .load-more-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .load-more-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin: 0 5px;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .article-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .category-filters {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-moon"></i>
+                    <span>SleepCycle.io</span>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">Calculator</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="tips.html">Sleep Tips</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="blog-container">
+                <div class="page-header">
+                    <h1>Sleep Science Blog</h1>
+                    <p>Expert insights, research, and tips for better sleep and improved well-being</p>
+                </div>
+
+                <div class="content-section">
+                    <div class="featured-article">
+                        <span class="featured-label">Featured Article</span>
+                        <h2 class="article-title">The Latest Research: How Sleep Cycles Affect Your Daily Performance</h2>
+                        <p class="article-excerpt">
+                            Discover the groundbreaking new study from Harvard Medical School that reveals the profound impact of sleep cycles on cognitive performance, memory consolidation, and emotional regulation. Learn how optimizing your sleep cycles can transform your daily productivity and well-being.
+                        </p>
+                        <div class="article-meta">
+                            <span class="article-date">
+                                <i class="fas fa-calendar"></i>
+                                November 15, 2023
+                            </span>
+                            <span class="read-time">
+                                <i class="fas fa-clock"></i>
+                                8 min read
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="category-filters">
+                        <button class="category-btn active">All Articles</button>
+                        <button class="category-btn">Sleep Science</button>
+                        <button class="category-btn">Sleep Disorders</button>
+                        <button class="category-btn">Health & Wellness</button>
+                        <button class="category-btn">Technology</button>
+                        <button class="category-btn">Lifestyle</button>
+                    </div>
+
+                    <div class="article-grid">
+                        <article class="article-card">
+                            <div class="article-image">
+                                <span class="article-category">Sleep Science</span>
+                            </div>
+                            <div class="article-content">
+                                <h3 class="article-title">Understanding REM Sleep: Why Dreaming Matters for Your Health</h3>
+                                <p class="article-excerpt">
+                                    Explore the fascinating world of REM sleep and discover why this crucial sleep stage is essential for emotional processing, memory consolidation, and creative problem-solving.
+                                </p>
+                                <div class="article-meta">
+                                    <span class="article-date">
+                                        <i class="fas fa-calendar"></i>
+                                        November 12, 2023
+                                    </span>
+                                    <span class="read-time">
+                                        <i class="fas fa-clock"></i>
+                                        6 min read
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="article-card">
+                            <div class="article-image">
+                                <span class="article-category">Sleep Disorders</span>
+                            </div>
+                            <div class="article-content">
+                                <h3 class="article-title">Sleep Apnea: Signs, Symptoms, and Modern Treatment Options</h3>
+                                <p class="article-excerpt">
+                                    Learn to recognize the warning signs of sleep apnea and discover the latest advances in treatment that can help you breathe easier and sleep better.
+                                </p>
+                                <div class="article-meta">
+                                    <span class="article-date">
+                                        <i class="fas fa-calendar"></i>
+                                        November 8, 2023
+                                    </span>
+                                    <span class="read-time">
+                                        <i class="fas fa-clock"></i>
+                                        7 min read
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="article-card">
+                            <div class="article-image">
+                                <span class="article-category">Health & Wellness</span>
+                            </div>
+                            <div class="article-content">
+                                <h3 class="article-title">The Gut-Brain-Sleep Connection: How Your Microbiome Affects Rest</h3>
+                                <p class="article-excerpt">
+                                    Emerging research reveals the surprising connection between gut health and sleep quality. Discover how probiotics and diet can improve your sleep patterns.
+                                </p>
+                                <div class="article-meta">
+                                    <span class="article-date">
+                                        <i class="fas fa-calendar"></i>
+                                        November 5, 2023
+                                    </span>
+                                    <span class="read-time">
+                                        <i class="fas fa-clock"></i>
+                                        9 min read
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="article-card">
+                            <div class="article-image">
+                                <span class="article-category">Technology</span>
+                            </div>
+                            <div class="article-content">
+                                <h3 class="article-title">Sleep Tracking Technology: Which Devices Actually Work?</h3>
+                                <p class="article-excerpt">
+                                    An in-depth review of the latest sleep tracking technology, from smartwatches to dedicated sleep monitors. Find out which devices provide the most accurate insights.
+                                </p>
+                                <div class="article-meta">
+                                    <span class="article-date">
+                                        <i class="fas fa-calendar"></i>
+                                        November 1, 2023
+                                    </span>
+                                    <span class="read-time">
+                                        <i class="fas fa-clock"></i>
+                                        10 min read
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="article-card">
+                            <div class="article-image">
+                                <span class="article-category">Lifestyle</span>
+                            </div>
+                            <div class="article-content">
+                                <h3 class="article-title">Shift Work Sleep Disorder: Strategies for Night Shift Workers</h3>
+                                <p class="article-excerpt">
+                                    Essential tips and strategies for shift workers to maintain healthy sleep patterns despite irregular schedules. Learn from sleep specialists who help night shift workers thrive.
+                                </p>
+                                <div class="article-meta">
+                                    <span class="article-date">
+                                        <i class="fas fa-calendar"></i>
+                                        October 28, 2023
+                                    </span>
+                                    <span class="read-time">
+                                        <i class="fas fa-clock"></i>
+                                        8 min read
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="article-card">
+                            <div class="article-image">
+                                <span class="article-category">Sleep Science</span>
+                            </div>
+                            <div class="article-content">
+                                <h3 class="article-title">Chronotypes: Are You a Morning Lark or Night Owl?</h3>
+                                <p class="article-excerpt">
+                                    Understanding your natural chronotype can help you optimize your sleep schedule and daily productivity. Take our quiz to discover your sleep personality type.
+                                </p>
+                                <div class="article-meta">
+                                    <span class="article-date">
+                                        <i class="fas fa-calendar"></i>
+                                        October 25, 2023
+                                    </span>
+                                    <span class="read-time">
+                                        <i class="fas fa-clock"></i>
+                                        6 min read
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="load-more">
+                        <button class="load-more-btn">
+                            <i class="fas fa-plus"></i> Load More Articles
+                        </button>
+                    </div>
+                </div>
+
+                <div class="popular-tags">
+                    <h3 class="tags-title">Popular Topics</h3>
+                    <div class="tags-cloud">
+                        <span class="tag">Sleep Cycles</span>
+                        <span class="tag">REM Sleep</span>
+                        <span class="tag">Insomnia</span>
+                        <span class="tag">Sleep Hygiene</span>
+                        <span class="tag">Dreaming</span>
+                        <span class="tag">Sleep Apnea</span>
+                        <span class="tag">Melatonin</span>
+                        <span class="tag">Sleep Deprivation</span>
+                        <span class="tag">Napping</span>
+                        <span class="tag">Sleep Technology</span>
+                        <span class="tag">Circadian Rhythm</span>
+                        <span class="tag">Sleep Quality</span>
+                    </div>
+                </div>
+
+                <div class="newsletter-section">
+                    <h2 class="newsletter-title">Stay Updated with Sleep Science</h2>
+                    <p class="newsletter-description">
+                        Get the latest sleep research, tips, and exclusive content delivered straight to your inbox. Join our community of sleep enthusiasts!
+                    </p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+                        <button type="submit" class="newsletter-button">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 SleepCycle.io. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Category filter functionality
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            const articleCards = document.querySelectorAll('.article-card');
+
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    const selectedCategory = this.textContent;
+
+                    // Filter articles
+                    articleCards.forEach(card => {
+                        if (selectedCategory === 'All Articles') {
+                            card.style.display = 'block';
+                        } else {
+                            const cardCategory = card.querySelector('.article-category').textContent;
+                            if (cardCategory === selectedCategory) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+
+            // Load more functionality
+            const loadMoreBtn = document.querySelector('.load-more-btn');
+            let articlesLoaded = 6;
+
+            loadMoreBtn.addEventListener('click', function() {
+                // Simulate loading more articles
+                const articleGrid = document.querySelector('.article-grid');
+
+                for (let i = 0; i < 3; i++) {
+                    const newArticle = document.createElement('article');
+                    newArticle.className = 'article-card';
+                    newArticle.innerHTML = `
+                        <div class="article-image">
+                            <span class="article-category">Health & Wellness</span>
+                        </div>
+                        <div class="article-content">
+                            <h3 class="article-title">New Sleep Article ${articlesLoaded + i + 1}</h3>
+                            <p class="article-excerpt">
+                                Discover more insights about sleep health and wellness in our latest articles covering cutting-edge sleep science research and practical tips for better rest.
+                            </p>
+                            <div class="article-meta">
+                                <span class="article-date">
+                                    <i class="fas fa-calendar"></i>
+                                    Coming Soon
+                                </span>
+                                <span class="read-time">
+                                    <i class="fas fa-clock"></i>
+                                    5 min read
+                                </span>
+                            </div>
+                        </div>
+                    `;
+                    articleGrid.appendChild(newArticle);
+                }
+
+                articlesLoaded += 3;
+            });
+
+            // Newsletter form submission
+            const newsletterForm = document.querySelector('.newsletter-form');
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('.newsletter-input');
+
+                // Simulate newsletter subscription
+                alert(`Thank you for subscribing with email: ${emailInput.value}`);
+                emailInput.value = '';
+            });
+
+            // Tag click functionality
+            const tags = document.querySelectorAll('.tag');
+            tags.forEach(tag => {
+                tag.addEventListener('click', function() {
+                    const tagName = this.textContent;
+                    // Filter articles by tag (simplified for demo)
+                    console.log(`Filtering by tag: ${tagName}`);
+                });
+            });
+
+            // Article card click
+            articleCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // Simulate navigation to article
+                    const title = this.querySelector('.article-title').textContent;
+                    console.log(`Opening article: ${title}`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

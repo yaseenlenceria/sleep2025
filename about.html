@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Sleep Cycles - Understanding Your Sleep | SleepCycle.io</title>
+    <meta name="description" content="Learn about sleep cycles, REM sleep, deep sleep, and how understanding your sleep patterns can improve your overall health and well-being.">
+    <meta name="keywords" content="sleep cycles, REM sleep, deep sleep, sleep science, sleep health, sleep quality">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a6de5;
+            --secondary-color: #5c7cfa;
+            --accent-color: #748ffc;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --text-color: #333;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem 0;
+        }
+
+        .about-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            padding: 3rem 2rem;
+        }
+
+        .content-section:nth-child(even) {
+            background: var(--light-color);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .cycle-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .cycle-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .cycle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .cycle-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .cycle-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .cycle-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .cycle-duration {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .info-box {
+            background: rgba(74, 109, 229, 0.1);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            border-radius: 0 10px 10px 0;
+            margin: 2rem 0;
+        }
+
+        .info-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary-color);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 2rem 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            width: 45%;
+        }
+
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .timeline-time {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .back-to-home {
+            display: inline-flex;
+            align-items: center;
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            margin: 2rem auto;
+        }
+
+        .back-to-home:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .back-to-home i {
+            margin-right: 8px;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin: 0 5px;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: row !important;
+                padding-left: 50px;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+
+            .cycle-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-moon"></i>
+                    <span>SleepCycle.io</span>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">Calculator</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="tips.html">Sleep Tips</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="about-container">
+                <div class="page-header">
+                    <h1>Understanding Sleep Cycles</h1>
+                    <p>Discover the science behind your sleep and how understanding sleep cycles can transform your rest</p>
+                </div>
+
+                <section class="content-section">
+                    <h2 class="section-title">What Are Sleep Cycles?</h2>
+                    <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8;">
+                        Sleep cycles are natural patterns of brain activity that occur during sleep. Each cycle lasts approximately 90 minutes and consists of different stages of sleep. Understanding these cycles can help you optimize your sleep schedule and wake up feeling refreshed.
+                    </p>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <span class="stat-number">90</span>
+                            <div class="stat-label">Minutes per sleep cycle</div>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">4-6</span>
+                            <div class="stat-label">Cycles per night</div>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">25%</span>
+                            <div class="stat-label">REM sleep per night</div>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">15</span>
+                            <div class="stat-label">Minutes to fall asleep</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2 class="section-title">The Four Stages of Sleep</h2>
+                    <div class="cycle-cards">
+                        <div class="cycle-card">
+                            <div class="cycle-icon">
+                                <i class="fas fa-bed"></i>
+                            </div>
+                            <h3 class="cycle-title">Stage 1: Light Sleep</h3>
+                            <p class="cycle-description">The transition stage between wakefulness and sleep. Your muscles begin to relax, and your brain waves start to slow down.</p>
+                            <span class="cycle-duration">5-10 minutes</span>
+                        </div>
+                        <div class="cycle-card">
+                            <div class="cycle-icon">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <h3 class="cycle-title">Stage 2: Deeper Sleep</h3>
+                            <p class="cycle-description">Your body temperature drops, and your heart rate slows. This stage prepares your body for deep sleep.</p>
+                            <span class="cycle-duration">20-25 minutes</span>
+                        </div>
+                        <div class="cycle-card">
+                            <div class="cycle-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 class="cycle-title">Stage 3: Deep Sleep</h3>
+                            <p class="cycle-description">Also known as slow-wave sleep. This is when your body repairs tissues, builds bone and muscle, and strengthens the immune system.</p>
+                            <span class="cycle-duration">20-40 minutes</span>
+                        </div>
+                        <div class="cycle-card">
+                            <div class="cycle-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3 class="cycle-title">Stage 4: REM Sleep</h3>
+                            <p class="cycle-description">Rapid Eye Movement sleep is when most dreaming occurs. Your brain is highly active, similar to when you're awake.</p>
+                            <span class="cycle-duration">10-60 minutes</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2 class="section-title">A Night of Sleep</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="timeline-time">10:30 PM - 11:00 PM</div>
+                                <h4>Falling Asleep</h4>
+                                <p>You transition through light sleep stages as your body prepares for deeper rest.</p>
+                            </div>
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="timeline-time">11:00 PM - 12:30 AM</div>
+                                <h4>First Sleep Cycle</h4>
+                                <p>You experience your deepest sleep of the night, crucial for physical restoration.</p>
+                            </div>
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="timeline-time">12:30 AM - 2:00 AM</div>
+                                <h4>Second Sleep Cycle</h4>
+                                <p>Balanced mix of deep sleep and REM sleep, memory consolidation begins.</p>
+                            </div>
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="timeline-time">2:00 AM - 3:30 AM</div>
+                                <h4>Third Sleep Cycle</h4>
+                                <p>More REM sleep, intense dreaming, and emotional processing.</p>
+                            </div>
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="timeline-time">3:30 AM - 5:00 AM</div>
+                                <h4>Fourth Sleep Cycle</h4>
+                                <p>Extended REM periods, creativity and problem-solving functions active.</p>
+                            </div>
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="timeline-time">5:00 AM - 6:30 AM</div>
+                                <h4>Fifth Sleep Cycle</h4>
+                                <p>Mostly light sleep and REM, preparing your body for wakefulness.</p>
+                            </div>
+                            <div class="timeline-dot"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2 class="section-title">Why Sleep Cycles Matter</h2>
+
+                    <div class="info-box">
+                        <h3><i class="fas fa-star"></i> Better Wake-ups</h3>
+                        <p>Waking up at the end of a sleep cycle (during light sleep) makes you feel more refreshed and less groggy than waking up during deep sleep.</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h3><i class="fas fa-heartbeat"></i> Physical Health</h3>
+                        <p>Each complete sleep cycle provides essential physical restoration, immune system strengthening, and hormone regulation.</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h3><i class="fas fa-brain"></i> Mental Performance</h3>
+                        <p>Proper sleep cycles ensure adequate REM sleep for memory consolidation, learning, and emotional regulation.</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h3><i class="fas fa-clock"></i> Sleep Efficiency</h3>
+                        <p>Understanding your sleep cycles helps you maximize the quality of rest within your available sleep time.</p>
+                    </div>
+                </section>
+
+                <section class="content-section" style="text-align: center;">
+                    <h2 class="section-title">Optimize Your Sleep Today</h2>
+                    <p style="max-width: 600px; margin: 0 auto 2rem; font-size: 1.1rem;">
+                        Use our sleep cycle calculator to find the perfect bedtime or wake-up time that aligns with your natural sleep rhythms.
+                    </p>
+                    <a href="index.html" class="back-to-home">
+                        <i class="fas fa-calculator"></i>
+                        Try Sleep Cycle Calculator
+                    </a>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 SleepCycle.io. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
