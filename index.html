@@ -496,18 +496,17 @@
         }
 
         .clock-visual {
-            width: 280px;
-            height: 280px;
+            width: 300px;
+            height: 300px;
             border-radius: 50%;
-            background: linear-gradient(145deg, rgba(30, 30, 50, 0.9), rgba(15, 15, 35, 0.9));
+            background: linear-gradient(145deg, rgba(30, 30, 50, 0.95), rgba(15, 15, 35, 0.95));
             position: relative;
             margin: 0 auto 2rem;
             box-shadow:
-                0 20px 40px rgba(0, 0, 0, 0.4),
-                0 0 60px rgba(99, 102, 241, 0.1),
-                inset 0 0 30px rgba(99, 102, 241, 0.05);
-            transition: transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1), box-shadow 0.4s ease;
-            cursor: pointer;
+                0 25px 50px rgba(0, 0, 0, 0.5),
+                0 0 80px rgba(99, 102, 241, 0.2),
+                inset 0 0 40px rgba(99, 102, 241, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 2px solid var(--card-border);
             overflow: hidden;
         }
@@ -568,51 +567,38 @@
 
         .clock-hand {
             position: absolute;
-            transform-origin: bottom center;
-            border-radius: 20px;
-            transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+            left: 50%;
+            bottom: 50%;
+            transform-origin: center bottom;
+            border-radius: 10px;
             cursor: grab;
+            transition: none;
             z-index: 10;
-            filter: drop-shadow(0 0 10px currentColor);
         }
 
-        .clock-hand:active {
+        .clock-hand.dragging {
             cursor: grabbing;
-            transition: transform 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+            transition: transform 0.1s ease-out;
         }
 
         .hour-hand {
-            width: 10px;
-            height: 70px;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+            width: 12px;
+            height: 80px;
+            margin-left: -6px;
+            background: linear-gradient(to top, #6366f1, #8b5cf6);
             box-shadow:
-                0 0 20px rgba(99, 102, 241, 0.6),
-                0 4px 8px rgba(0, 0, 0, 0.3),
-                inset 0 0 10px rgba(255, 255, 255, 0.3);
-            border: 1px solid rgba(139, 92, 246, 0.5);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform-origin: center bottom;
-            margin-top: -70px;
-            margin-left: -5px;
+                0 0 20px rgba(99, 102, 241, 0.8),
+                0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .minute-hand {
-            width: 6px;
-            height: 90px;
-            background: linear-gradient(135deg, #ec4899, #f59e0b, #10b981);
+            width: 8px;
+            height: 100px;
+            margin-left: -4px;
+            background: linear-gradient(to top, #ec4899, #f59e0b);
             box-shadow:
-                0 0 20px rgba(236, 72, 153, 0.6),
-                0 3px 6px rgba(0, 0, 0, 0.3),
-                inset 0 0 8px rgba(255, 255, 255, 0.3);
-            border: 1px solid rgba(236, 72, 153, 0.5);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform-origin: center bottom;
-            margin-top: -90px;
-            margin-left: -3px;
+                0 0 20px rgba(236, 72, 153, 0.8),
+                0 2px 6px rgba(0, 0, 0, 0.3);
         }
 
         .clock-hand::before {
@@ -671,21 +657,18 @@
 
         .clock-center {
             position: absolute;
-            width: 16px;
-            height: 16px;
+            width: 20px;
+            height: 20px;
             background: var(--gradient-1);
             border-radius: 50%;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             box-shadow:
-                0 0 20px rgba(99, 102, 241, 0.8),
-                0 0 40px rgba(99, 102, 241, 0.4),
-                0 4px 8px rgba(0, 0, 0, 0.3),
-                inset 0 0 8px rgba(255, 255, 255, 0.6);
-            border: 2px solid rgba(139, 92, 246, 0.5);
-            z-index: 15;
-            animation: pulse-center 2s ease-in-out infinite;
+                0 0 30px rgba(99, 102, 241, 1),
+                0 0 50px rgba(99, 102, 241, 0.5),
+                inset 0 0 10px rgba(255, 255, 255, 0.8);
+            z-index: 20;
         }
 
         @keyframes pulse-center {
@@ -999,29 +982,26 @@
             }
 
             .clock-visual {
-                width: 320px;
-                height: 320px;
+                width: 340px;
+                height: 340px;
                 margin: 0 auto 2rem;
-                position: relative;
             }
 
             .hour-hand {
-                height: 80px;
-                width: 12px;
-                margin-top: -80px;
-                margin-left: -6px;
+                height: 90px;
+                width: 14px;
+                margin-left: -7px;
             }
 
             .minute-hand {
-                height: 100px;
-                width: 8px;
-                margin-top: -100px;
-                margin-left: -4px;
+                height: 110px;
+                width: 10px;
+                margin-left: -5px;
             }
 
             .clock-center {
-                width: 16px;
-                height: 16px;
+                width: 24px;
+                height: 24px;
             }
 
             .result-times {
@@ -1224,6 +1204,7 @@
         // State
         let isBedtimeMode = true;
         let isAm = true;
+        let isDragging = false;
 
         // Initialize
         updateClockVisual();
@@ -1300,11 +1281,16 @@
                 hour24 = 0;
             }
 
-            // Calculate rotation angles - 12 o'clock is at 0 degrees, clockwise
-            const hourAngle = ((hour24 % 12) * 30) + (minute * 0.5);
+            // Calculate rotation angles - 12 o'clock is at 0 degrees
+            const hourAngle = (hour24 % 12) * 30 + (minute * 0.5);
             const minuteAngle = minute * 6;
 
-            // Apply rotations
+            // Apply rotations with smooth transition (only when not dragging)
+            if (!isDragging) {
+                hourHand.style.transition = 'transform 0.3s ease';
+                minuteHand.style.transition = 'transform 0.3s ease';
+            }
+
             hourHand.style.transform = `rotate(${hourAngle}deg)`;
             minuteHand.style.transform = `rotate(${minuteAngle}deg)`;
         }
@@ -1425,11 +1411,11 @@
             }
         }
 
-        // Enhanced clock interaction - draggable hands
+        // Enhanced clock interaction - completely rebuilt
         function initializeClockInteraction() {
             const hourHand = document.getElementById('hourHand');
             const minuteHand = document.getElementById('minuteHand');
-            const clockFace = document.querySelector('.clock-face');
+            const clockVisual = document.querySelector('.clock-visual');
 
             let isDragging = false;
             let currentHand = null;
@@ -1450,25 +1436,19 @@
                 isDragging = true;
                 currentHand = handType;
 
-                // Add dragging class for enhanced visual feedback
-                if (handType === 'hour') {
-                    hourHand.style.cursor = 'grabbing';
-                    hourHand.classList.add('dragging');
-                } else {
-                    minuteHand.style.cursor = 'grabbing';
-                    minuteHand.classList.add('dragging');
-                }
+                const hand = handType === 'hour' ? hourHand : minuteHand;
+                hand.classList.add('dragging');
+                hand.style.cursor = 'grabbing';
 
-                // Add pulsing effect to clock center
-                document.querySelector('.clock-center').style.animation = 'pulse-center 0.5s ease-in-out infinite';
-
+                // Prevent text selection while dragging
+                document.body.style.userSelect = 'none';
                 e.preventDefault();
             }
 
             function drag(e) {
                 if (!isDragging || !currentHand) return;
 
-                const clockRect = clockFace.getBoundingClientRect();
+                const clockRect = clockVisual.getBoundingClientRect();
                 const clockCenterX = clockRect.left + clockRect.width / 2;
                 const clockCenterY = clockRect.top + clockRect.height / 2;
 
@@ -1482,36 +1462,38 @@
                 }
 
                 // Calculate angle from center to mouse/touch position
-                // 12 o'clock is at top (angle -90), 3 o'clock is right (0), 6 o'clock is bottom (90), 9 o'clock is left (180)
                 const deltaX = clientX - clockCenterX;
                 const deltaY = clientY - clockCenterY;
+
+                // Get angle in radians, then convert to degrees
                 let angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
 
-                // Convert to 12-o'clock = 0 degrees system
+                // Adjust angle: 0° = 12 o'clock, 90° = 3 o'clock, etc.
                 angle = angle + 90;
                 if (angle < 0) angle += 360;
                 if (angle >= 360) angle -= 360;
 
                 if (currentHand === 'hour') {
-                    // Update hour hand to follow mouse exactly
+                    // Apply rotation immediately
                     hourHand.style.transform = `rotate(${angle}deg)`;
 
-                    // Convert angle to hour for display
-                    let hour = Math.round(angle / 30) % 12;
+                    // Convert angle to hour (closest hour mark)
+                    let hour = Math.round(angle / 30);
                     if (hour === 0) hour = 12;
+                    if (hour > 12) hour -= 12;
 
-                    // Update hour input
+                    // Update input
                     hourInput.value = hour;
 
                 } else if (currentHand === 'minute') {
-                    // Update minute hand to follow mouse exactly
+                    // Apply rotation immediately
                     minuteHand.style.transform = `rotate(${angle}deg)`;
 
-                    // Convert angle to minutes for display
+                    // Convert angle to minutes
                     let minute = Math.round(angle / 6);
                     if (minute === 60) minute = 0;
 
-                    // Update minute input
+                    // Update input
                     minuteInput.value = minute;
                 }
 
@@ -1524,33 +1506,18 @@
                 isDragging = false;
                 currentHand = null;
 
-                // Remove dragging classes and reset cursor
-                hourHand.style.cursor = 'grab';
-                minuteHand.style.cursor = 'grab';
+                // Remove dragging classes
                 hourHand.classList.remove('dragging');
                 minuteHand.classList.remove('dragging');
+                hourHand.style.cursor = 'grab';
+                minuteHand.style.cursor = 'grab';
 
-                // Reset clock center animation
-                document.querySelector('.clock-center').style.animation = 'pulse-center 2s ease-in-out infinite';
+                // Restore text selection
+                document.body.style.userSelect = '';
 
-                // Add subtle bounce effect
-                const clockVisual = document.querySelector('.clock-visual');
-                clockVisual.style.animation = 'bounce-in 0.3s ease-out';
-                setTimeout(() => {
-                    clockVisual.style.animation = '';
-                }, 300);
+                // Update clock visual to ensure consistency
+                updateClockVisual();
             }
-
-            // Add bounce animation
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes bounce-in {
-                    0% { transform: scale(1.05); }
-                    50% { transform: scale(1.02); }
-                    100% { transform: scale(1); }
-                }
-            `;
-            document.head.appendChild(style);
         }
 
         // Clock tooltips functionality
